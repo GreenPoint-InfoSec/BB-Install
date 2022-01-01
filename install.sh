@@ -14,7 +14,9 @@ apt install -y git \
     ca-certificates \
     curl \
     gnupg \
-    virtualenv
+    virtualenv \
+    gobuster \
+
 
 # Install Go
 
@@ -23,8 +25,9 @@ wget https://go.dev/dl/$1
 rm -rf /usr/local/go && tar -C /usr/local -xzf $1
 cd ~
 
-echo "export GOPATH=$HOME/go" >> ~/.bashrc
-echo "export PATH=$PATH:$GOPATH:/usr/local/go/bin" >> ~/.bashrc
+# sleep 5
+export GOPATH=$HOME/go | tee -a ~/.bashrc
+export PATH=$PATH:$GOPATH:/usr/local/go/bin | tee -a ~/.bashrc
 source .bashrc
 
 # Notify
@@ -82,13 +85,13 @@ git clone https://github.com/sullo/nikto.git
 # Sn1per
 git clone https://github.com/1N3/Sn1per
 cd Sn1per
-bash install.sh
+bash install.sh force
 cd ~/tools
 
 # Docker
 cd ~
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-apt install -y docker-ce docker-ce-cli containerd.io
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+# apt install -y docker-ce docker-ce-cli containerd.io
 
 # Create Docker images
 
