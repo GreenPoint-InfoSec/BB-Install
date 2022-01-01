@@ -86,7 +86,7 @@ git clone https://github.com/FortyNorthSecurity/EyeWitness.git
 git clone https://github.com/sullo/nikto.git
 
 # Sn1per
-git clone https://github.com/1N3/Sn1per
+git clone https://github.com/GreenPoint-InfoSec/Sn1per
 cd Sn1per
 bash install.sh force
 cd ~/tools
