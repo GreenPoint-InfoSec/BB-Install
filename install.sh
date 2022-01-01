@@ -4,8 +4,6 @@ cd ~
 
 apt update && apt upgrade -y
 
-timedatectl set-timezone Etc/GMT
-
 apt install -y git \
     make \
     gcc \
@@ -16,7 +14,6 @@ apt install -y git \
     ca-certificates \
     curl \
     gnupg \
-    lsb-release \
     virtualenv
 
 # Install Go
