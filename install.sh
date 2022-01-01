@@ -25,9 +25,12 @@ wget https://go.dev/dl/$1
 rm -rf /usr/local/go && tar -C /usr/local -xzf $1
 cd ~
 
-# sleep 5
-export GOPATH=$HOME/go | tee -a ~/.bashrc
-export PATH=$PATH:$GOPATH:/usr/local/go/bin | tee -a ~/.bashrc
+export GOPATH=$HOME/go
+echo $GOPATH
+export PATH=$PATH:$GOPATH:/usr/local/go/bin
+echo $PATH
+echo "export GOPATH=$HOME/go" >> .bashrc
+echo "export PATH=$PATH:$GOPATH:/usr/local/go/bin" >> .bashrc
 source .bashrc
 
 # Notify
