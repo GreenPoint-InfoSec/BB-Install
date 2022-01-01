@@ -87,9 +87,6 @@ git clone https://github.com/FortyNorthSecurity/EyeWitness.git
 # Nikto
 git clone https://github.com/sullo/nikto.git
 
-go version
-sleep 10
-
 # Sn1per
 git clone https://github.com/GreenPoint-InfoSec/Sn1per
 cd Sn1per
