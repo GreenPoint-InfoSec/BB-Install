@@ -33,6 +33,9 @@ echo "export GOPATH=$HOME/go" >> .bashrc
 echo "export PATH=$PATH:$GOPATH:/usr/local/go/bin" >> .bashrc
 source .bashrc
 
+go version
+sleep 10
+
 # Notify
 go install github.com/projectdiscovery/notify/cmd/notify@latest
 
