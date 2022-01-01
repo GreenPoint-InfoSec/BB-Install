@@ -70,7 +70,7 @@ cd FavFreak
 virtualenv -p python3 env
 source env/bin/activate
 python3 -m pip install mmh3
-echo "deactivate"
+deactivate
 cd ~/tools
 
 # Masscan
