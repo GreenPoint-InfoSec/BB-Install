@@ -4,8 +4,7 @@ cd ~
 
 apt update && apt upgrade -y
 
-apt install -y git \
-    make \
+apt install -y make \
     gcc \
     net-tools \
     vim \
