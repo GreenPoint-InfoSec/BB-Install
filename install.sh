@@ -16,6 +16,9 @@ apt install -y git \
     gnupg \
     virtualenv \
     gobuster \
+    nikto \
+    iputils-ping \
+    enum4linux
 
 
 # Install Go
@@ -64,6 +67,9 @@ mkdir tools && cd tools
 git clone https://github.com/GreenPoint-InfoSec/Back-The-File-Up.git
 git clone https://github.com/GreenPoint-InfoSec/Wordlists.git
 
+# Eyewitness
+git clone https://github.com/FortyNorthSecurity/EyeWitness.git
+
 # Install Favfreak
 git clone https://github.com/devanshbatham/FavFreak
 cd FavFreak
@@ -81,12 +87,6 @@ make
 make install 
 cd ~/tools
 
-# Eyewitness
-git clone https://github.com/FortyNorthSecurity/EyeWitness.git
-
-# Nikto
-git clone https://github.com/sullo/nikto.git
-
 # Sn1per
 git clone https://github.com/GreenPoint-InfoSec/Sn1per
 cd Sn1per
@@ -95,8 +95,8 @@ cd ~/tools
 
 # Docker
 cd ~
-# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-# apt install -y docker-ce docker-ce-cli containerd.io
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+apt install -y docker-ce docker-ce-cli containerd.io
 
 # Create Docker images
 
