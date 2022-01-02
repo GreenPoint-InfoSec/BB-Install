@@ -23,8 +23,9 @@ echo -e "$RESET"
 sleep 2
 
 if [ -z $1 ]; then
-    echo -e "$OKRED Please enter the go file name to download!"
+    echo -e "$OKRED Please specify the go file to download!"
     echo -e "$OKRED The latest version is go1.17.5.linux-amd64.tar.gz"
+    echo -e "$OKRED Check https://go.dev/dl/ for the latest version!"
     echo -e "$RESET"
     exit 1
 fi
