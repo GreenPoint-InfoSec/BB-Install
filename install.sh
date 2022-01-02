@@ -31,7 +31,7 @@ fi
 
 cd ~
 
-echo -e "$OKGREEN[*] Installing Dependencies $RESET"
+echo -e "$OKGREEN[*] Installing Dependencies... $RESET"
 apt install -y make \
     gcc \
     net-tools \
@@ -48,7 +48,7 @@ apt install -y make \
 
 
 # Install Go
-echo -e "$OKGREEN[*] Installing Go $RESET"
+echo -e "$OKGREEN[*] Installing Go... $RESET"
 cd /tmp 
 wget https://go.dev/dl/$1
 rm -rf /usr/local/go && tar -C /usr/local -xzf $1
@@ -67,27 +67,27 @@ go version
 echo -e "$RESET"
 
 # Notify
-echo -e "$OKGREEN[*] Installing Notify $RESET"
+echo -e "$OKGREEN[*] Installing Notify... $RESET"
 go install github.com/projectdiscovery/notify/cmd/notify@latest
 
 # Amass
-echo -e "$OKGREEN[*] Installing amass $RESET"
+echo -e "$OKGREEN[*] Installing amass... $RESET"
 go get github.com/OWASP/Amass/v3/...
 
 # Subfinder
-echo -e "$OKGREEN[*] Installing Subfinder $RESET"
+echo -e "$OKGREEN[*] Installing Subfinder... $RESET"
 go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 
 # Github subdomains
-echo -e "$OKGREEN[*] Installing Github-subdomains $RESET"
+echo -e "$OKGREEN[*] Installing Github-subdomains... $RESET"
 go install github.com/gwen001/github-subdomains@master
 
 # httprobe
-echo -e "$OKGREEN[*] Installing httprobe $RESET"
+echo -e "$OKGREEN[*] Installing httprobe... $RESET"
 go install github.com/tomnomnom/httprobe@master
 
 #shuffledns
-echo -e "$OKGREEN[*] Installing ShuffleDNS $RESET"
+echo -e "$OKGREEN[*] Installing ShuffleDNS... $RESET"
 go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@master
 
 # api shodan
@@ -98,16 +98,16 @@ go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@master
 mkdir tools && cd tools
 
 # Clone my repos
-echo -e "$OKGREEN[*] Cloning GreenPoint-InfoSec Repositories $RESET"
+echo -e "$OKGREEN[*] Cloning GreenPoint-InfoSec Repositories... $RESET"
 git clone https://github.com/GreenPoint-InfoSec/Back-The-File-Up.git
 git clone https://github.com/GreenPoint-InfoSec/Wordlists.git
 
 # Eyewitness
-echo -e "$OKGREEN[*] Cloning Eyewitness $RESET"
+echo -e "$OKGREEN[*] Cloning Eyewitness... $RESET"
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git
 
 # Install Favfreak
-echo -e "$OKGREEN[*] Installing Favfreak $RESET"
+echo -e "$OKGREEN[*] Installing Favfreak... $RESET"
 git clone https://github.com/devanshbatham/FavFreak
 cd FavFreak
 virtualenv -p python3 env
@@ -117,7 +117,7 @@ deactivate
 cd ~/tools
 
 # Masscan
-echo -e "$OKGREEN[*] Installing Masscan $RESET"
+echo -e "$OKGREEN[*] Installing Masscan... $RESET"
 git clone https://github.com/robertdavidgraham/masscan
 cd masscan
 make
@@ -126,17 +126,17 @@ make install
 cd ~/tools
 
 # Sn1per
-echo -e "$OKGREEN[*] Installing Sn1per $RESET"
+echo -e "$OKGREEN[*] Installing Sn1per... $RESET"
 git clone https://github.com/GreenPoint-InfoSec/Sn1per
 cd Sn1per
 bash install.sh force
 cd ~/tools
 
 # Docker
-echo -e "$OKGREEN[*] Installing Docker $RESET"
+echo -e "$OKGREEN[*] Installing Docker... $RESET"
 cd ~
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-apt install -y docker-ce docker-ce-cli containerd.io
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+# apt install -y docker-ce docker-ce-cli containerd.io
 
 # Create Docker images
 
