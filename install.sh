@@ -45,7 +45,8 @@ apt install -y make \
     virtualenv \
     gobuster \
     nikto \
-    iputils-ping
+    iputils-ping \
+    sudo
 
 
 # Install Go
@@ -106,6 +107,10 @@ git clone https://github.com/GreenPoint-InfoSec/Wordlists.git
 # Eyewitness
 echo -e "$OKGREEN[*] Cloning Eyewitness... $RESET"
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git
+
+# Hunter.sh
+echo -e "$OKGREEN[*] Cloning Hunter... $RESET"
+https://github.com/null-p4n/hunter.sh.git
 
 # Install Favfreak
 echo -e "$OKGREEN[*] Installing Favfreak... $RESET"
