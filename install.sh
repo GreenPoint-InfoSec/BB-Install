@@ -20,6 +20,7 @@ echo -e "$OKBLUE+ -- --=[ BB-Install by GreenPoint-InfoSec"
 echo -e "$OKBLUE+ -- --=[ https://github.com/GreenPoint-InfoSec"
 echo -e "$OKBLUE+ -- --=[ Usage ./install.sh [go archive file name e.g go1.17.5.linux-amd64.tar.gz]"
 echo -e "$RESET"
+sleep 2
 
 if [ -z $1 ]; then
     echo -e "$OKRED Please enter the go file name to download!"
