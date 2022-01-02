@@ -20,7 +20,7 @@ echo -e "$OKBLUE+ -- --=[ BB-Install by GreenPoint-InfoSec"
 echo -e "$OKBLUE+ -- --=[ https://github.com/GreenPoint-InfoSec"
 echo -e "$OKBLUE+ -- --=[ Usage ./install.sh [go archive file name e.g go1.17.5.linux-amd64.tar.gz]"
 echo -e "$RESET"
-sleep 2
+sleep 1
 
 if [ -z $1 ]; then
     echo -e "$OKRED Please specify the go file to download!"
@@ -47,7 +47,7 @@ apt install -y make \
     nikto \
     iputils-ping \
     sudo
-
+sleep 1
 
 # Install Go
 echo -e "$OKGREEN[*] Installing Go... $RESET"
@@ -149,3 +149,15 @@ apt install -y docker-ce docker-ce-cli containerd.io
 
 # Create dot files repo
 # Move to relevant .config directory
+
+export GOPATH=$HOME/go/bin
+echo $GOPATH
+export PATH=$PATH:$GOPATH:/usr/local/go/bin
+echo $PATH
+echo "export GOPATH=$HOME/go/bin" >> .bashrc
+echo "export PATH=$PATH:$GOPATH:/usr/local/go/bin" >> .bashrc
+source .bashrc
+
+echo -e "$OKGREEN"
+go version
+echo -e "$RESET"
