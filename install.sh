@@ -23,8 +23,7 @@ echo -e "$RESET"
 
 cd ~
 
-apt update && apt upgrade -y
-
+echo -e "$OKGREEN[*] Installing Dependencies"
 apt install -y make \
     gcc \
     net-tools \
@@ -41,7 +40,7 @@ apt install -y make \
 
 
 # Install Go
-
+echo -e "$OKGREEN[*] Installing Go"
 cd /tmp 
 wget https://go.dev/dl/$1
 rm -rf /usr/local/go && tar -C /usr/local -xzf $1
@@ -55,24 +54,32 @@ echo "export GOPATH=$HOME/go" >> .bashrc
 echo "export PATH=$PATH:$GOPATH:/usr/local/go/bin" >> .bashrc
 source .bashrc
 
+$OKGREEN
 go version
+$RESET
 
 # Notify
+echo -e "$OKGREEN[*] Installing Notify"
 go install github.com/projectdiscovery/notify/cmd/notify@latest
 
 # Amass
+echo -e "$OKGREEN[*] Installing amass"
 go get github.com/OWASP/Amass/v3/...
 
 # Subfinder
+echo -e "$OKGREEN[*] Installing Subfinder"
 go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 
 # Github subdomains
+echo -e "$OKGREEN[*] Installing Github-subdomains"
 go install github.com/gwen001/github-subdomains@master
 
 # httprobe
+echo -e "$OKGREEN[*] Installing httprobe"
 go install github.com/tomnomnom/httprobe@master
 
 #shuffledns
+echo -e "$OKGREEN[*] Installing ShuffleDNS"
 go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@master
 
 # api shodan
@@ -83,13 +90,16 @@ go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@master
 mkdir tools && cd tools
 
 # Clone my repos
+echo -e "$OKGREEN[*] Cloning GreenPoint-InfoSec Repositories"
 git clone https://github.com/GreenPoint-InfoSec/Back-The-File-Up.git
 git clone https://github.com/GreenPoint-InfoSec/Wordlists.git
 
 # Eyewitness
+echo -e "$OKGREEN[*] Cloning Eyewitness"
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git
 
 # Install Favfreak
+echo -e "$OKGREEN[*] Installing Favfreak"
 git clone https://github.com/devanshbatham/FavFreak
 cd FavFreak
 virtualenv -p python3 env
@@ -99,6 +109,7 @@ deactivate
 cd ~/tools
 
 # Masscan
+echo -e "$OKGREEN[*] Installing Masscan"
 git clone https://github.com/robertdavidgraham/masscan
 cd masscan
 make
@@ -107,12 +118,14 @@ make install
 cd ~/tools
 
 # Sn1per
+echo -e "$OKGREEN[*] Installing Sn1per"
 git clone https://github.com/GreenPoint-InfoSec/Sn1per
 cd Sn1per
 bash install.sh force
 cd ~/tools
 
 # Docker
+echo -e "$OKGREEN[*] Installing Docker"
 cd ~
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 apt install -y docker-ce docker-ce-cli containerd.io
