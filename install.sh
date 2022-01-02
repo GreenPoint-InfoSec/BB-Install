@@ -21,6 +21,12 @@ echo -e "$OKBLUE+ -- --=[ https://github.com/GreenPoint-InfoSec"
 echo -e "$OKBLUE+ -- --=[ Usage ./install.sh [go archive file name e.g go1.17.5.linux-amd64.tar.gz]"
 echo -e "$RESET"
 
+for [ -z $1 ];then
+    echo -e "$OKRED Please enter the go file name to download!"
+    echo -e "$OKRED The latest version is go1.17.5.linux-amd64.tar.gz"
+    echo -e "$RESET"
+fi
+
 cd ~
 
 echo -e "$OKGREEN[*] Installing Dependencies $RESET"
@@ -54,9 +60,9 @@ echo "export GOPATH=$HOME/go" >> .bashrc
 echo "export PATH=$PATH:$GOPATH:/usr/local/go/bin" >> .bashrc
 source .bashrc
 
-$OKGREEN
+echo -e "$OKGREEN"
 go version
-$RESET
+echo -e "$RESET"
 
 # Notify
 echo -e "$OKGREEN[*] Installing Notify $RESET"
