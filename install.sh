@@ -16,9 +16,9 @@ echo -e "$OKGREEN│\____//_/    \___/ \___//_/ /_//_/     \____//_//_/ /_/ \__/
 echo -e "$OKGREEN│                                                              │"
 echo -e "$OKGREEN└──────────────────────────────────────────────────────────────┘"
 echo -e "$RESET"
-echo -e "$OKBLUE+ -- --=[ BB-Install by GreenPoint-InfoSec
-echo -e "$OKBLUE+ -- --=[ https://github.com/GreenPoint-InfoSec
-echo -e "$OKBLUE+ -- --=[ Usage ./install.sh [go archive file name e.g go1.17.5.linux-amd64.tar.gz]
+echo -e "$OKBLUE+ -- --=[ BB-Install by GreenPoint-InfoSec"
+echo -e "$OKBLUE+ -- --=[ https://github.com/GreenPoint-InfoSec"
+echo -e "$OKBLUE+ -- --=[ Usage ./install.sh [go archive file name e.g go1.17.5.linux-amd64.tar.gz]"
 echo -e "$RESET"
 
 cd ~
