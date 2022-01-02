@@ -50,15 +50,15 @@ go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 # Github subdomains
 go install github.com/gwen001/github-subdomains@master
 
-# api shodan
-# go get github.com/incogbyte/shosubgo/apishodan
-# go build main.go
-
 # httprobe
 go install github.com/tomnomnom/httprobe@master
 
 #shuffledns
 go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@master
+
+# api shodan
+# go get github.com/incogbyte/shosubgo/apishodan
+# go build main.go
 
 
 mkdir tools && cd tools
