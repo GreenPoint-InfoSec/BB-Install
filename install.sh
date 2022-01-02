@@ -110,7 +110,7 @@ git clone https://github.com/FortyNorthSecurity/EyeWitness.git
 
 # Hunter.sh
 echo -e "$OKGREEN[*] Cloning Hunter... $RESET"
-https://github.com/null-p4n/hunter.sh.git
+git clone https://github.com/null-p4n/hunter.sh.git
 
 # Install Favfreak
 echo -e "$OKGREEN[*] Installing Favfreak... $RESET"
