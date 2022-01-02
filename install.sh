@@ -56,11 +56,11 @@ wget https://go.dev/dl/$1
 rm -rf /usr/local/go && tar -C /usr/local -xzf $1
 cd ~
 
-export GOPATH=$HOME/go
+export GOPATH=$HOME/go/bin
 echo $GOPATH
 export PATH=$PATH:$GOPATH:/usr/local/go/bin
 echo $PATH
-echo "export GOPATH=$HOME/go" >> .bashrc
+echo "export GOPATH=$HOME/go/bin" >> .bashrc
 echo "export PATH=$PATH:$GOPATH:/usr/local/go/bin" >> .bashrc
 source .bashrc
 
