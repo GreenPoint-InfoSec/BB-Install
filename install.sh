@@ -141,8 +141,8 @@ cd ~/tools
 # Docker
 echo -e "$OKGREEN[*] Installing Docker... $RESET"
 cd ~
-# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-# apt install -y docker-ce docker-ce-cli containerd.io
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+apt install -y docker-ce docker-ce-cli containerd.io
 
 # Create Docker images
 
