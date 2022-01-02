@@ -144,11 +144,23 @@ cd ~
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 apt install -y docker-ce docker-ce-cli containerd.io
 
-# Create Docker images
+# Pull Docker images
+# Amass
+docker pull caffix/amass
+
+# Subfinder
+docker pull projectdiscovery/subfinder:latest
+
+# Notify
+docker pull projectdiscovery/notify:latest
+
+# ShuffleDNS
+docker pull projectdiscovery/shuffledns:latest
 
 
 # Create dot files repo
 # Move to relevant .config directory
+
 
 export GOPATH=$HOME/go/bin
 echo $GOPATH
