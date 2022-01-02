@@ -16,8 +16,7 @@ apt install -y make \
     virtualenv \
     gobuster \
     nikto \
-    iputils-ping \
-    enum4linux
+    iputils-ping
 
 
 # Install Go
