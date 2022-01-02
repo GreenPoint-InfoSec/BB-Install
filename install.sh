@@ -1,5 +1,26 @@
 #!/usr/bin/bash
 
+OKBLUE='\033[94m'
+OKRED='\033[91m'
+OKGREEN='\033[92m'
+OKORANGE='\033[93m'
+RESET='\e[0m'
+REGEX='^[0-9]+$'
+
+echo -e "$OKGREEN┌──────────────────────────────────────────────────────────────┐"
+echo -e "$OKGREEN│   ______                          ____          _         __ │"
+echo -e "$OKGREEN│  / ____/_____ ___   ___   ____   / __ \ ____   (_)____   / /_│"
+echo -e "$OKGREEN│ / / __ / ___// _ \ / _ \ / __ \ / /_/ // __ \ / // __ \ / __/│"
+echo -e "$OKGREEN│/ /_/ // /   /  __//  __// / / // ____// /_/ // // / / // /_  │"
+echo -e "$OKGREEN│\____//_/    \___/ \___//_/ /_//_/     \____//_//_/ /_/ \__/  │"
+echo -e "$OKGREEN│                                                              │"
+echo -e "$OKGREEN└──────────────────────────────────────────────────────────────┘"
+echo -e "$RESET"
+echo -e "$OKBLUE+ -- --=[ BB-Install by GreenPoint-InfoSec
+echo -e "$OKBLUE+ -- --=[ https://github.com/GreenPoint-InfoSec
+echo -e "$OKBLUE+ -- --=[ Usage ./install.sh [go archive file name e.g go1.17.5.linux-amd64.tar.gz]
+echo -e "$RESET"
+
 cd ~
 
 apt update && apt upgrade -y
