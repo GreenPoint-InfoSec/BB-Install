@@ -161,7 +161,21 @@ docker pull projectdiscovery/shuffledns:latest
 # Create dot files repo
 # Move to relevant .config directory
 
-source .bashrc
+cd ~
 
-echo $GOPATH
-echo $PATH
+echo -e "$OKGREEN"
+echo -e "$OKGREEN   ______                          ____          _         __ "
+echo -e "$OKGREEN  / ____/_____ ___   ___   ____   / __ \ ____   (_)____   / /_"
+echo -e "$OKGREEN / / __ / ___// _ \ / _ \ / __ \ / /_/ // __ \ / // __ \ / __/"
+echo -e "$OKGREEN/ /_/ // /   /  __//  __// / / // ____// /_/ // // / / // /_  "
+echo -e "$OKGREEN\____//_/    \___/ \___//_/ /_//_/     \____//_//_/ /_/ \__/  "
+echo -e "$OKGREEN"
+echo -e "$OKGREEN"
+echo -e "$RESET"
+echo -e "$OKBLUE+ -- --=[ BB-Install by GreenPoint-InfoSec"
+echo -e "$OKBLUE+ -- --=[ https://github.com/GreenPoint-InfoSec"
+echo -e "$OKBLUE+ -- --=[ Usage ./install.sh [go archive file name e.g go1.17.5.linux-amd64.tar.gz]"
+echo -e "$OKGREEN"
+echo -e "$OKGREEN"
+echo -e "$OKGREEN Thank you, your installations are now complete! Good luck and have fun!"
+echo -e "$RESET"
