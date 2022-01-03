@@ -104,8 +104,7 @@ go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@master
 
 # api shodan
 echo -e "$OKGREEN[*] Installing Shosubgo... $RESET"
-go get github.com/incogbyte/shosubgo
-go build main.go
+go install github.com/incogbyte/shosubgo@latest
 
 
 mkdir tools && cd tools
