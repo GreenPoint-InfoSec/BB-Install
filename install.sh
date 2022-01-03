@@ -33,7 +33,8 @@ fi
 cd ~
 
 echo -e "$OKGREEN[*] Installing Dependencies... $RESET"
-apt install -y make \
+apt install -y build-essential \
+    make \
     gcc \
     net-tools \
     vim \
@@ -46,7 +47,17 @@ apt install -y make \
     gobuster \
     nikto \
     iputils-ping \
-    sudo
+    sudo \
+    whois \
+    nano \
+    python3 \
+    python3-pip \
+    perl \
+    dnsutils \
+    zsh \
+    tmux \
+    awscli \
+    sqlmap    
 sleep 1
 
 # Install Go
@@ -112,6 +123,23 @@ git clone https://github.com/FortyNorthSecurity/EyeWitness.git
 echo -e "$OKGREEN[*] Cloning Hunter... $RESET"
 git clone https://github.com/null-p4n/hunter.sh.git
 
+# XSSStrike
+echo -e "$OKGREEN[*] Installing XSS Strike... $RESET"
+git clone https://github.com/s0md3v/XSStrike.git
+cd XSStrike
+pip3 install -r requirements.txt 
+chmod +x xsstrike.py
+ln -sf ~/toolkit/XSStrike/xsstrike.py /usr/local/bin/xsstrike
+cd ~/tools
+
+# Joomscan
+echo -e "$OKGREEN[*] Installing Joomscan... $RESET"
+git clone https://github.com/rezasp/joomscan.git 
+cd joomscan/ 
+chmod +x joomscan.pl
+ln -sf ~/toolkit/joomscan/joomscan.pl /usr/local/bin/joomscan
+cd ~/tools
+
 # Install Favfreak
 echo -e "$OKGREEN[*] Installing Favfreak... $RESET"
 git clone https://github.com/devanshbatham/FavFreak
@@ -157,10 +185,24 @@ docker pull projectdiscovery/notify:latest
 # ShuffleDNS
 docker pull projectdiscovery/shuffledns:latest
 
+# Sn1per
+docker pull xer0dayz/sn1per
+
+# Build Docker Images
+# Eyewitness
+cd ~/tools/EyeWitness/Python
+docker build --build-arg user=$USER --tag eyewitness --file ./Python/Dockerfile .
+cd ~
+
+# Joomscan
+cd ~/tools/Joomscan
+docker build -t rezasp/joomscan .
+cd ~
 
 # Create dot files repo
 # Move to relevant .config directory
 
+apt clean
 cd ~
 
 echo -e "$OKGREEN"
