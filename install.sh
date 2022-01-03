@@ -125,7 +125,7 @@ echo -e "$OKGREEN[*] Installing Eyewitness... $RESET"
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git
 cd ~/tools/EyeWitness/Python/setup
 chmod +x setup.sh
-./setup.sh
+bash setup.sh
 cd ~/tools
 
 # Hunter.sh
