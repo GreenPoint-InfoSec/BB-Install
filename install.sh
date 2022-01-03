@@ -56,9 +56,9 @@ wget https://go.dev/dl/$1
 rm -rf /usr/local/go && tar -C /usr/local -xzf $1
 cd ~
 
-export GOPATH=$HOME/go/bin
+export GOPATH=$HOME/go
 echo $GOPATH
-export PATH=$PATH:$GOPATH:/usr/local/go/bin
+export PATH=$PATH:$GOPATH/bin:/usr/local/go/bin
 echo $PATH
 echo "export GOPATH=$HOME/go/bin" >> .bashrc
 echo "export PATH=$PATH:$GOPATH:/usr/local/go/bin" >> .bashrc
@@ -161,15 +161,7 @@ docker pull projectdiscovery/shuffledns:latest
 # Create dot files repo
 # Move to relevant .config directory
 
-
-export GOPATH=$HOME/go/bin
-echo $GOPATH
-export PATH=$PATH:$GOPATH:/usr/local/go/bin
-echo $PATH
-echo "export GOPATH=$HOME/go/bin" >> .bashrc
-echo "export PATH=$PATH:$GOPATH:/usr/local/go/bin" >> .bashrc
 source .bashrc
 
-echo -e "$OKGREEN"
-go version
-echo -e "$RESET"
+echo $GOPATH
+echo $PATH
