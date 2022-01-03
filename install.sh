@@ -134,7 +134,7 @@ git clone https://github.com/null-p4n/hunter.sh.git
 
 
 # XSSStrike
-echo -e "$OKGREEN[*] Installing XSS Strike... $RESET"
+echo -e "$OKGREEN[*] Installing XSStrike... $RESET"
 git clone https://github.com/s0md3v/XSStrike.git
 cd XSStrike
 pip3 install -r requirements.txt 
@@ -207,7 +207,7 @@ docker build --build-arg user=$USER --tag eyewitness --file ./Python/Dockerfile 
 cd ~
 
 # Joomscan
-cd ~/tools/Joomscan
+cd ~/tools/joomscan
 docker build -t rezasp/joomscan .
 cd ~
 
