@@ -56,8 +56,8 @@ apt install -y build-essential \
     zsh \
     tmux \
     awscli \
-    sqlmap    
-sleep 1
+    sqlmap \
+    recon-ng
 
 # Install Go
 echo -e "$OKGREEN[*] Installing Go... $RESET"
