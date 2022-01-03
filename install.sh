@@ -20,7 +20,6 @@ echo -e "$OKBLUE+ -- --=[ BB-Install by GreenPoint-InfoSec"
 echo -e "$OKBLUE+ -- --=[ https://github.com/GreenPoint-InfoSec"
 echo -e "$OKBLUE+ -- --=[ Usage ./install.sh [go archive file name e.g go1.17.5.linux-amd64.tar.gz]"
 echo -e "$RESET"
-sleep 1
 
 if [ -z $1 ]; then
     echo -e "$OKRED Please specify the go file to download!"
@@ -114,15 +113,25 @@ mkdir tools && cd tools
 # Clone my repos
 echo -e "$OKGREEN[*] Cloning GreenPoint-InfoSec Repositories... $RESET"
 git clone https://github.com/GreenPoint-InfoSec/Back-The-File-Up.git
+cd ~/tools/Back-The-File-Up
+chmod +x backup.sh
+ln -sf ~/tools/Back-The-File-Up/backup.sh /usr/local/bin/backup
+cd ~/tools
+
 git clone https://github.com/GreenPoint-InfoSec/Wordlists.git
 
 # Eyewitness
-echo -e "$OKGREEN[*] Cloning Eyewitness... $RESET"
+echo -e "$OKGREEN[*] Installing Eyewitness... $RESET"
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git
+cd ~/tools/EyeWitness/Python/setup
+chmod +x setup.sh
+./setup.sh
+cd ~/tools
 
 # Hunter.sh
 echo -e "$OKGREEN[*] Cloning Hunter... $RESET"
 git clone https://github.com/null-p4n/hunter.sh.git
+
 
 # XSSStrike
 echo -e "$OKGREEN[*] Installing XSS Strike... $RESET"
@@ -130,7 +139,7 @@ git clone https://github.com/s0md3v/XSStrike.git
 cd XSStrike
 pip3 install -r requirements.txt 
 chmod +x xsstrike.py
-ln -sf ~/toolkit/XSStrike/xsstrike.py /usr/local/bin/xsstrike
+ln -sf ~/tools/XSStrike/xsstrike.py /usr/local/bin/xsstrike
 cd ~/tools
 
 # Joomscan
@@ -138,7 +147,7 @@ echo -e "$OKGREEN[*] Installing Joomscan... $RESET"
 git clone https://github.com/rezasp/joomscan.git 
 cd joomscan/ 
 chmod +x joomscan.pl
-ln -sf ~/toolkit/joomscan/joomscan.pl /usr/local/bin/joomscan
+ln -sf ~/tools/joomscan/joomscan.pl /usr/local/bin/joomscan
 cd ~/tools
 
 # Install Favfreak
