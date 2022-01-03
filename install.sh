@@ -104,8 +104,9 @@ echo -e "$OKGREEN[*] Installing ShuffleDNS... $RESET"
 go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@master
 
 # api shodan
-# go get github.com/incogbyte/shosubgo/apishodan
-# go build main.go
+echo -e "$OKGREEN[*] Installing Shosubgo... $RESET"
+go get github.com/incogbyte/shosubgo
+go build main.go
 
 
 mkdir tools && cd tools
@@ -173,6 +174,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/
 apt install -y docker-ce docker-ce-cli containerd.io
 
 # Pull Docker images
+echo -e "$OKGREEN[*] Pulling Docker Images... $RESET"
 # Amass
 docker pull caffix/amass
 
@@ -189,6 +191,7 @@ docker pull projectdiscovery/shuffledns:latest
 docker pull xer0dayz/sn1per
 
 # Build Docker Images
+echo -e "$OKGREEN[*] Building Docker Images... $RESET"
 # Eyewitness
 cd ~/tools/EyeWitness/Python
 docker build --build-arg user=$USER --tag eyewitness --file ./Python/Dockerfile .
